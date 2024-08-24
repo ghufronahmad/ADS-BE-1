@@ -132,4 +132,4 @@ export const getKaryawanWithCuti = async (req: Request, res: Response) => {
         console.error('Error fetching Karyawan with Cuti:', error);
         res.status(500).json({ error: "Internal server error" });
     } 
-};
+}

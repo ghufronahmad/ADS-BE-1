@@ -81,7 +81,7 @@ export const getAllCuti = async (req: Request, res: Response) => {
     const { sortBy, orderBy } = req.query; // Read the sortBy and orderBy query parameters
 
     let sortField: 'tanggalCuti' | undefined;
-    let sortDirection: 'asc' | 'desc' = 'asc'; // Default to ascending order
+    let sortDirection: 'asc' | 'desc' = 'asc'; 
 
     if (sortBy === 'tanggalCuti') {
         sortField = sortBy as 'tanggalCuti';
@@ -93,7 +93,7 @@ export const getAllCuti = async (req: Request, res: Response) => {
 
     try {
         const cuti = await prismaClient.cuti.findMany({
-            orderBy: sortField ? { [sortField]: sortDirection } : undefined, // Apply sorting
+            orderBy: sortField ? { [sortField]: sortDirection } : undefined, 
         });
 
         res.json(cuti);
